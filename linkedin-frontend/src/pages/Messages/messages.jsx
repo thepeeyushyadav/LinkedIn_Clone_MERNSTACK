@@ -106,7 +106,7 @@ const Messages = () => {
     try {
       const response = await axios.post(
         "https://api.cloudinary.com/v1_1/dk2gu2ld5/image/upload",
-        data
+        data, { withCredentials: false }
       );
 
       const imageUrl = response.data.url;

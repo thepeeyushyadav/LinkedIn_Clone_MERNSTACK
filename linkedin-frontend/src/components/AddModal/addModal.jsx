@@ -30,7 +30,7 @@ const AddModal = (props) => {
     data.append('upload_preset', 'linkedInClone');
 
     try {
-      const response = await axios.post("https://api.cloudinary.com/v1_1/dk2gu2ld5/image/upload", data)
+      const response = await axios.post("https://api.cloudinary.com/v1_1/dk2gu2ld5/image/upload", data, { withCredentials: false })
 
       const imageUrl = response.data.url;
       setImageUrl(imageUrl);
