@@ -16,6 +16,7 @@ import SingleActivity from "./pages/SingleActivity/singleActivity";
 import Notification from "./pages/Notification/notification";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import './App.css'
 function App() {
   const [isLogin, setIsLogin] = useState(localStorage.getItem("isLogin"));
 
