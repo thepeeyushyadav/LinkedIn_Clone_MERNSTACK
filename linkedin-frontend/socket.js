@@ -1,11 +1,11 @@
 import { io } from "socket.io-client";
 
-// Prefer VITE_API_URL if provided (deployed env), otherwise fall back to window.location origin
-const apiUrl = import.meta.env.VITE_API_URL || (typeof window !== 'undefined' && window.location.origin) || 'http://localhost:4000';
+const SOCKET_URL = process.env.NODE_ENV === "production"
+  ? "https://linkedin-clone-mernstack-1.onrender.com"  // Render backend URL
+  : "http://localhost:4000";                            // Local dev
 
-// Ensure socket uses the correct protocol (ws/wss) for the API URL
-const socketUrl = apiUrl.replace(/^http/, 'ws');
-
-const socket = io(socketUrl);
+const socket = io(SOCKET_URL, {
+  transports: ["websocket"], // optional but recommended
+});
 
 export default socket;
