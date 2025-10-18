@@ -6,8 +6,8 @@ const NotificationModal = require("../models/notification");
 
 const cookieOptions = {
   httpOnly: true,
-  secure: false, // Set to true in production
-  sameSite: "lax", // set None in production
+  secure: true, // Set to true in production
+  sameSite: "none", // set None in production
 };
 
 const client = new OAuth2Client(process.env.GOOGLE_CLIENT_ID);
