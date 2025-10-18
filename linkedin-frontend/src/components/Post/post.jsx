@@ -95,7 +95,7 @@ const Post = ({ profile, item, key, personalData }) => {
 
   const copyToClipboard = async () => {
     try {
-      let string = `http://localhost:5173/profile/${item?.user?._id}/activities/${item?._id}`;
+      let string = `https://liinkedinn.netlify.app/profile/${item?.user?._id}/activities/${item?._id}`;
       await navigator.clipboard.writeText(string);
       toast.success("Link copied to clipboard");
     } catch (err) {
