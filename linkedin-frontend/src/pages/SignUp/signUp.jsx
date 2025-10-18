@@ -16,7 +16,7 @@ const SignUp = (props) => {
         if (registerField.email.trim().length===0 || registerField.password.trim().length===0 || registerField.f_name.trim().length===0){
             return toast.error("All fields are required");
         }
-        await axios.post('http://localhost:4000/api/auth/register', registerField).then(res=>{
+        await axios.post('https://linkedin-clone-mernstack-1.onrender.com/api/auth/register', registerField).then(res=>{
             toast.success("You have registered successfully");
             setRegisterField({...registerField, email: "", password: "", f_name: ""  });
 

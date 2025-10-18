@@ -14,7 +14,7 @@ const SingleActivity = () => {
   const [ownData, setOwnData] = useState(null)
   
   const fetchDataOnLoad = async () => {
-    await axios.get(`http://localhost:4000/api/post/getPostById/${postId}`).then(res =>{
+    await axios.get(`https://linkedin-clone-mernstack-1.onrender.com/api/post/getPostById/${postId}`).then(res =>{
       console.log(res)
       setPost(res.data.post);
     }).catch(err => {

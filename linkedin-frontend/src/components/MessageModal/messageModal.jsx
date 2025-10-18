@@ -5,7 +5,7 @@ const MessageModal = ({ selfData, userData }) => {
   const [message, setMessage] = useState('');
 
   const handleSendMessage = async () => {
-    await axios.post('http://localhost:4000/api/conversation/add-conversation',{receiverId:userData?._id, message}, {withCredentials: true}).then(res => {
+    await axios.post('https://linkedin-clone-mernstack-1.onrender.com/api/conversation/add-conversation',{receiverId:userData?._id, message}, {withCredentials: true}).then(res => {
       window.location.reload(); 
 
     }).catch((err) => {

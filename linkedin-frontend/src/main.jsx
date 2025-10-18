@@ -6,7 +6,7 @@ import { BrowserRouter } from 'react-router-dom'
 import { GoogleOAuthProvider } from '@react-oauth/google';
 import axios from 'axios';
 
-axios.defaults.baseURL = import.meta.env.VITE_API_URL || 'http://localhost:4000'; 
+axios.defaults.baseURL = import.meta.env.VITE_API_URL || 'https://linkedin-clone-mernstack-1.onrender.com'; 
 axios.defaults.withCredentials = true;
 
 axios.interceptors.request.use(

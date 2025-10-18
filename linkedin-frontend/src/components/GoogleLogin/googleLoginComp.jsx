@@ -7,7 +7,7 @@ const GoogleLoginComp = (props) => {
     const navigate = useNavigate();
     const handleOnSuccess = async(credResponse) => {
         const token = credResponse.credential;
-        const res = await axios.post('http://localhost:4000/api/auth/google', { token }, { withCredentials: true });
+        const res = await axios.post('https://linkedin-clone-mernstack-1.onrender.com/api/auth/google', { token }, { withCredentials: true });
         
         localStorage.setItem('isLogin', 'true');
         localStorage.setItem("userInfo", JSON.stringify(res.data.user));

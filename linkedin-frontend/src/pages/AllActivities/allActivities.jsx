@@ -12,7 +12,7 @@ const AllActivities = () => {
 
   const fetchDataOnLoad = async () => {
     await axios
-      .get(`http://localhost:4000/api/post/getAllPOstForUser/${id}`)
+      .get(`https://linkedin-clone-mernstack-1.onrender.com/api/post/getAllPOstForUser/${id}`)
       .then((res) => {
         console.log(res);
         setPosts(res.data.posts);

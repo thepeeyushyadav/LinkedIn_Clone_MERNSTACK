@@ -19,7 +19,7 @@ const Feeds = () => {
   const [addPostModal, setAddPostModal] = useState(false);
 
   // const fetchSelfData = async () => {
-  //   await axios.get('http://localhost:4000/api/auth/self', { withCredentials: true }).then(res => {
+  //   await axios.get('https://linkedin-clone-mernstack-1.onrender.com/api/auth/self', { withCredentials: true }).then(res => {
   //       setpersonalData(res.data.user);
   //   }).catch(err => {
   //     console.error('API error:', err);
@@ -31,10 +31,10 @@ const Feeds = () => {
   const fetchData = async () => {
     try {
       const [userData, postData] = await Promise.all([
-        await axios.get("http://localhost:4000/api/auth/self", {
+        await axios.get("https://linkedin-clone-mernstack-1.onrender.com/api/auth/self", {
           withCredentials: true,
         }),
-        await axios.get("http://localhost:4000/api/post/getAllPost"),
+        await axios.get("https://linkedin-clone-mernstack-1.onrender.com/api/post/getAllPost"),
       ]);
       setPersonalData(userData.data.user);
       localStorage.setItem("userInfo", JSON.stringify(userData.data.user));

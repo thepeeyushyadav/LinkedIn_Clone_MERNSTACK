@@ -38,7 +38,7 @@ const Navbar2 = () => {
 
   const searchAPICall = async () => {
     await axios
-      .get(`http://localhost:4000/api/auth/findUser?query=${debouncedTerm}`, {
+      .get(`https://linkedin-clone-mernstack-1.onrender.com/api/auth/findUser?query=${debouncedTerm}`, {
         withCredentials: true,
       })
       .then((res) => {
@@ -54,7 +54,7 @@ const Navbar2 = () => {
 
   const fetchNotification = async () => {
     await axios
-      .get("http://localhost:4000/api/notification/activeNotification", {
+      .get("https://linkedin-clone-mernstack-1.onrender.com/api/notification/activeNotification", {
         withCredentials: true,
       })
       .then((res) => {

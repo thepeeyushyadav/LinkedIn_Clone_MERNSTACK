@@ -13,7 +13,7 @@ const Notification = () => {
 
   const fetchNotificationData = async () => {
     try {
-      const res = await axios.get("http://localhost:4000/api/notification", {
+      const res = await axios.get("https://linkedin-clone-mernstack-1.onrender.com/api/notification", {
         withCredentials: true,
       });
       console.log("Notification response:", res.data);
@@ -34,7 +34,7 @@ const Notification = () => {
   const handleOnClickNotification = async (item) => {
     await axios
       .put(
-        "http://localhost:4000/api/notification/isRead",
+        "https://linkedin-clone-mernstack-1.onrender.com/api/notification/isRead",
         { notificationId: item._id },
         { withCredentials: true }
       )

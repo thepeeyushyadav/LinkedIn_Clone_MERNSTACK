@@ -57,7 +57,7 @@ const Messages = () => {
 
   const fetchMessages = async () => {
     await axios
-      .get(`http://localhost:4000/api/message/${activeConvId}`, {
+      .get(`https://linkedin-clone-mernstack-1.onrender.com/api/message/${activeConvId}`, {
         withCredentials: true,
       })
       .then((res) => {
@@ -72,7 +72,7 @@ const Messages = () => {
 
   const fetchConversationOnLoad = async () => {
     await axios
-      .get("http://localhost:4000/api/conversation/get-conversation", {
+      .get("https://linkedin-clone-mernstack-1.onrender.com/api/conversation/get-conversation", {
         withCredentials: true,
       })
       .then((res) => {
@@ -121,7 +121,7 @@ const Messages = () => {
   const handleSendMessage = async () => {
     await axios
       .post(
-        `http://localhost:4000/api/message`,
+        `https://linkedin-clone-mernstack-1.onrender.com/api/message`,
         { conversation: activeConvId, message: messageText, picture: imgLink },
         { withCredentials: true }
       )

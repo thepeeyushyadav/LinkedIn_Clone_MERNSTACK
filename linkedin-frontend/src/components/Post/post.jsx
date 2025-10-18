@@ -31,7 +31,7 @@ const Post = ({ profile, item, key, personalData }) => {
 
     await axios
       .post(
-        `http://localhost:4000/api/comment`,
+        `https://linkedin-clone-mernstack-1.onrender.com/api/comment`,
         { postId: item?._id, comment: commentText },
         { withCredentials: true }
       )
@@ -60,7 +60,7 @@ const Post = ({ profile, item, key, personalData }) => {
   const handleLikeFunc = async () => {
     await axios
       .post(
-        "http://localhost:4000/api/post/likeDislike",
+        "https://linkedin-clone-mernstack-1.onrender.com/api/post/likeDislike",
         { postId: item?._id },
         { withCredentials: true }
       )
@@ -82,7 +82,7 @@ const Post = ({ profile, item, key, personalData }) => {
   const handleCommentBoxOpenClose = async () => {
     setComment(true);
     await axios
-      .get(`http://localhost:4000/api/comment/${item?._id}`)
+      .get(`https://linkedin-clone-mernstack-1.onrender.com/api/comment/${item?._id}`)
       .then((resp) => {
         console.log(resp);
         setComments(resp.data.comments);
