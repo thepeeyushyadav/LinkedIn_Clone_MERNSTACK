@@ -1,8 +1,16 @@
 const mongoose = require("mongoose");
 
-//linkedInClone
+// Add a check to see if MONGODB_URI is loaded
+if (!process.env.MONGODB_URI) {
+  console.error("ERROR: MONGODB_URI is not defined in environment variables");
+  process.exit(1);
+}
+
 mongoose
-  .connect("mongodb://localhost:27017/linkedInClone")
+  .connect(process.env.MONGODB_URI, {
+    retryWrites: true,
+    w: 'majority'
+  })
   .then((res) => {
     console.log("MongoDB connected successfully");
   })

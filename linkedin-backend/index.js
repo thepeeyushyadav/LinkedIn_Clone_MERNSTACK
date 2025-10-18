@@ -1,3 +1,4 @@
+require('dotenv').config({ path: './config.env' });
 const express = require("express");
 const app = express();
 const cookieParser = require("cookie-parser");
@@ -7,6 +8,8 @@ const http = require("http");
 
 const server = http.createServer(app);
 
+require("./connection");
+
 const io = new Server(server, {
   cors: {
     origin: "http://localhost:5173",
@@ -14,8 +17,6 @@ const io = new Server(server, {
   },
 });
 
-require("./connection");
-require("dotenv").config({ path: "./config.env" });
 
 const PORT = process.env.PORT || 4000; //4000
 
