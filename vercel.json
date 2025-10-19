@@ -1,7 +1,7 @@
 {
-  "buildCommand": "cd linkedin-frontend && npm run build",
-  "installCommand": "cd linkedin-frontend && npm install",
+  "buildCommand": "cd linkedin-frontend && npm install && npm run build",
   "outputDirectory": "linkedin-frontend/dist",
+  "framework": "vite",
   "rewrites": [
     {
       "source": "/(.*)",
