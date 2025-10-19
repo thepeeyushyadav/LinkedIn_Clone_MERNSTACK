@@ -2,10 +2,14 @@
   "buildCommand": "cd linkedin-frontend && npm install && npm run build",
   "outputDirectory": "linkedin-frontend/dist",
   "framework": "vite",
-  "rewrites": [
+  "routes": [
     {
-      "source": "/(.*)",
-      "destination": "/index.html"
+      "src": "/assets/(.*)",
+      "dest": "/assets/$1"
+    },
+    {
+      "src": "/.*",
+      "dest": "/index.html"
     }
   ]
 }
