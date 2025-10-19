@@ -10,23 +10,37 @@ const server = http.createServer(app);
 
 require("./connection");
 
+const allowedOrigins = [
+  "https://linnkedinn.vercel.app",
+  "https://linkedin-clone-mernstack-1.onrender.com"
+];
+
 const io = new Server(server, {
-  cors: {
-    // Yahan badlo
-    origin: "https://linnkedinn.vercel.app", 
-    methods: ["GET", "POST"],
-  },
+  cors: {
+    origin: allowedOrigins,
+    methods: ["GET", "POST"],
+    credentials: true
+  },
 });
 
-
-const PORT = process.env.PORT || 4000; //4000
+const PORT = process.env.PORT || 4000;
 
 app.use(express.json());
 app.use(cookieParser());
 app.use(
   cors({
     credentials: true,
-    origin: "https://linnkedinn.vercel.app",
+    origin: function (origin, callback) {
+      if (!origin) return callback(null, true);
+      
+      const normalizedOrigin = origin.replace(/\/$/, '');
+      
+      if (allowedOrigins.includes(normalizedOrigin)) {
+        callback(null, true);
+      } else {
+        callback(new Error('Not allowed by CORS'));
+      }
+    }
   })
 );
 
@@ -40,7 +54,6 @@ io.on("connection", (socket) => {
 
   socket.on("sendMessage", (convId, messageDetail) => {
     console.log("message Sent");
-
     io.to(convId).emit("receiveMessage", messageDetail);
   });
 });
