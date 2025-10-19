@@ -216,7 +216,7 @@ const Profile = () => {
 
     const copyToClipboard = async () => {
       try {
-        let string = `https://liinkedinn.netlify.app/profile/${id}`;
+        let string = `https://linnkedinn.vercel.app/profile/${id}`;
         await navigator.clipboard.writeText(string);
         toast.success("Link copied to clipboard");
       } catch (err) {

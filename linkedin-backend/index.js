@@ -11,10 +11,11 @@ const server = http.createServer(app);
 require("./connection");
 
 const io = new Server(server, {
-  cors: {
-    origin: "https://liinkedinn.netlify.app",
-    methods: ["GET", "POST"],
-  },
+  cors: {
+    // Yahan badlo
+    origin: "https://linnkedinn.vercel.app", 
+    methods: ["GET", "POST"],
+  },
 });
 
 
@@ -25,7 +26,7 @@ app.use(cookieParser());
 app.use(
   cors({
     credentials: true,
-    origin: "https://liinkedinn.netlify.app",
+    origin: "https://linnkedinn.vercel.app/",
   })
 );
 
