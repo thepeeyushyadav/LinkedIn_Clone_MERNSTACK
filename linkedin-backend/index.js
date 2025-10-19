@@ -26,7 +26,7 @@ app.use(cookieParser());
 app.use(
   cors({
     credentials: true,
-    origin: "https://linnkedinn.vercel.app/",
+    origin: "https://linnkedinn.vercel.app",
   })
 );
 
