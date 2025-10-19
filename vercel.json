@@ -1,5 +1,5 @@
 {
-  "buildCommand": "chmod +x ./linkedin-frontend/node_modules/.bin/vite && cd linkedin-frontend && npm run build",
+  "buildCommand": "cd linkedin-frontend && npm run build",
   "installCommand": "cd linkedin-frontend && npm install",
   "outputDirectory": "linkedin-frontend/dist",
   "rewrites": [
@@ -7,7 +7,5 @@
       "source": "/(.*)",
       "destination": "/index.html"
     }
-  ],
-  "cleanUrls": true,
-  "trailingSlash": false
+  ]
 }
