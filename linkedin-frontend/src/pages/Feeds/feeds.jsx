@@ -57,6 +57,8 @@ const Feeds = () => {
 
   return (
   <div className="px-1 sm:px-5 xl:px-50 py-2 sm:py-9 flex flex-col md:flex-row gap-1 sm:gap-5 w-full mt-1 sm:mt-5 bg-orange-50 min-h-screen overflow-x-hidden">
+    {/* Spacer for fixed top navbar on mobile */}
+    <div className="block md:hidden h-14 w-full" />
       {/* left side */}
       <div className="hidden md:block w-full md:w-[21%] lg:w-[23%] py-3">
         <div className="h-fit">
