@@ -77,8 +77,10 @@ const Navbar2 = () => {
   const isActive = (path) => location.pathname === path;
 
   return (
-    <div className="bg-white h-14 flex justify-center py-1 px-5 xl:px-56 fixed top-0 w-full z-50 border-b border-gray-200">
-      <div className="flex items-center justify-between w-full max-w-screen-xl">
+    <>
+      {/* Desktop Navbar */}
+      <div className="bg-white h-14 flex justify-center py-1 px-5 xl:px-56 fixed top-0 w-full z-50 border-b border-gray-200 hidden sm:flex">
+        <div className="flex items-center justify-between w-full max-w-screen-xl">
         {/* Left Section: Logo & Search */}
         <Link to={"/feeds"} className="flex items-center gap-2">
           <img
@@ -269,8 +271,40 @@ const Navbar2 = () => {
             </div>
           </Link>
         </div>
+        </div>
       </div>
-    </div>
+
+      {/* Mobile Bottom Navbar */}
+      <nav className="sm:hidden fixed bottom-0 left-0 w-full bg-white border-t border-gray-200 z-50 flex justify-between px-1 py-1 shadow-lg">
+        <Link to="/feeds" className={`flex flex-col items-center flex-1 py-1 transition-all ${isActive('/feeds') ? 'text-blue-600' : 'text-gray-500'} active:bg-gray-100`}> 
+          <HomeIcon className="text-2xl" />
+          <span className="text-xs">Home</span>
+        </Link>
+        <Link to="/myNetwork" className={`flex flex-col items-center flex-1 py-1 transition-all ${isActive('/myNetwork') ? 'text-blue-600' : 'text-gray-500'} active:bg-gray-100`}>
+          <PeopleIcon className="text-2xl" />
+          <span className="text-xs">Network</span>
+        </Link>
+        <Link to="/resume" className={`flex flex-col items-center flex-1 py-1 transition-all ${isActive('/resume') ? 'text-blue-600' : 'text-gray-500'} active:bg-gray-100`}>
+          <WorkIcon className="text-2xl" />
+          <span className="text-xs">Jobs</span>
+        </Link>
+        <Link to="/messages" className={`flex flex-col items-center flex-1 py-1 transition-all ${isActive('/messages') ? 'text-blue-600' : 'text-gray-500'} active:bg-gray-100`}>
+          <ChatIcon className="text-2xl" />
+          <span className="text-xs">Chat</span>
+        </Link>
+        <Link to="/notification" className={`flex flex-col items-center flex-1 py-1 relative transition-all ${isActive('/notification') ? 'text-blue-600' : 'text-gray-500'} active:bg-gray-100`}>
+          <NotificationsIcon className="text-2xl" />
+          {notificationCount > 0 && (
+            <span className="absolute -top-1 right-3 bg-red-600 text-white text-xs rounded-full px-1 min-w-[18px] text-center">{notificationCount}</span>
+          )}
+          <span className="text-xs">Notif</span>
+        </Link>
+        <Link to={`/profile/${userData?._id}`} className={`flex flex-col items-center flex-1 py-1 transition-all ${isActive(`/profile/${userData?._id}`) ? 'text-blue-600' : 'text-gray-500'} active:bg-gray-100`}>
+          <img className="w-6 h-6 rounded-full border-2 border-white" src={userData?.profilePic} alt="Profile" />
+          <span className="text-xs">Me</span>
+        </Link>
+      </nav>
+    </>
   );
 };
 
