@@ -52,13 +52,14 @@ const MyNetwork = () => {
   }, [text]);
 
   return (
-    <div className="px-5 xl:px-50 py-9 flex flex-col gap-5 w-full mt-5 bg-orange-50">
-      <div className="py-4 px-10 border-1 border-gray-400 w-full flex justify-between my-5 text-xl bg-white rounded-xl">
-        <div>{text}</div>
-        <div className="flex gap-3">
+    <div className="px-2 sm:px-5 xl:px-50 py-2 sm:py-9 flex flex-col gap-3 w-full mt-2 sm:mt-5 bg-orange-50 min-h-screen">
+      {/* Responsive Catch up section */}
+      <div className="py-2 px-2 sm:px-10 border-1 border-gray-400 w-full flex flex-col sm:flex-row sm:justify-between items-center my-2 sm:my-5 text-base sm:text-xl bg-white rounded-xl">
+        <div className="mb-2 sm:mb-0 text-center sm:text-left">{text}</div>
+        <div className="flex gap-2 sm:gap-3">
           <button
             onClick={handleFriends}
-            className={`p-1 border-1 rounded-lg cursor-pointer border-gray-300 ${
+            className={`px-2 py-1 border-1 rounded-md cursor-pointer border-gray-300 text-xs sm:text-base ${
               text === "Catch up with friends" ? "bg-blue-800 text-white" : ""
             }`}
           >
@@ -66,7 +67,7 @@ const MyNetwork = () => {
           </button>
           <button
             onClick={handlePending}
-            className={`p-1 border-1 rounded-lg border-gray-300 cursor-pointer ${
+            className={`px-2 py-1 border-1 rounded-md border-gray-300 cursor-pointer text-xs sm:text-base ${
               text === "Pending Request" ? "bg-blue-800 text-white" : ""
             }`}
           >
@@ -75,10 +76,11 @@ const MyNetwork = () => {
         </div>
       </div>
 
-      <div className="flex h-[80vh] w-full gap-7 flex-wrap items-start justify-center">
+      {/* Responsive cards */}
+      <div className="flex w-full gap-3 sm:gap-7 flex-wrap items-start justify-center">
         {data.map((item, index) => {
           return (
-            <div className="md:w-[23%] h-[270px] sm:w-full">
+            <div className="w-[90vw] sm:w-[48%] md:w-[23%] h-[160px] sm:h-[220px] bg-white rounded-xl shadow border p-2 flex flex-col justify-center items-center">
               <ProfileCard data={item} />
             </div>
           );
