@@ -78,7 +78,7 @@ const Navbar2 = () => {
 
   return (
     <>
-      {/* Top Navbar (visible on all screens, compact on mobile) */}
+      {/* Top Navbar: Only logo and search bar on mobile, full navbar on desktop */}
       <div className="bg-white h-14 flex items-center justify-between py-1 px-2 sm:px-5 xl:px-56 fixed top-0 w-full z-50 border-b border-gray-200">
         {/* Logo */}
         <Link to={"/feeds"} className="flex items-center mr-2">
@@ -124,8 +124,8 @@ const Navbar2 = () => {
             )}
           </div>
         </div>
-        {/* Nav Icons/Text */}
-        <div className="flex items-center gap-2 sm:gap-4">
+        {/* Desktop nav icons only, hidden on mobile */}
+        <div className="hidden md:flex items-center gap-2 sm:gap-4">
           <Link to="/feeds" className="flex flex-col items-center px-1 sm:px-2">
             <HomeIcon className="text-lg sm:text-xl" />
             <span className="text-[10px] sm:text-xs">Home</span>
