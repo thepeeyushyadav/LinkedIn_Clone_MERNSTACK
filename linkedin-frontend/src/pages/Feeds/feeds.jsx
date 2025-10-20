@@ -104,41 +104,41 @@ const Feeds = () => {
       </div>
 
   {/* middle side */}
-  <div className="w-full py-2 md:py-5 md:w-[50%]">
+  <div className="w-full py-1 md:py-5 md:w-[50%]">
         <div>
           {/* Post Section */}
           <Card padding={1}>
             <div className="flex gap-2 items-center">
               <img
-                className="rounded-full w-10 h-10 sm:w-13 sm:h-13 border-2 border-white cursor-pointer"
+                className="rounded-full w-8 h-8 sm:w-13 sm:h-13 border-2 border-white cursor-pointer"
                 src={personalData?.profilePic}
               />
               <div
                 onClick={() => setAddPostModal(true)}
-                className="w-full border-1 py-2 sm:py-3 px-2 sm:px-3 rounded-3xl cursor-pointer hover:bg-gray-100 text-sm sm:text-base text-gray-700"
+                className="w-full border-1 py-1 sm:py-3 px-1 sm:px-3 rounded-3xl cursor-pointer hover:bg-gray-100 text-xs sm:text-base text-gray-700"
               >
                 Start a post
               </div>
             </div>
 
-            <div className="w-full flex flex-col xs:flex-row mt-2 gap-2 xs:gap-0">
+            <div className="w-full flex flex-col xs:flex-row mt-1 gap-1 xs:gap-0">
               <div
                 onClick={() => setAddPostModal(true)}
-                className="flex gap-1 sm:gap-2 p-2 cursor-pointer justify-center rounded-lg w-full xs:w-[33%] hover:bg-gray-100 text-xs sm:text-base"
+                className="flex gap-1 sm:gap-2 p-1 cursor-pointer justify-center rounded-lg w-full xs:w-[33%] hover:bg-gray-100 text-xs sm:text-base"
               >
-                <DynamicFeedIcon sx={{ color: 'green', fontSize: 20 }} /> Post
+                <DynamicFeedIcon sx={{ color: 'green', fontSize: 16 }} /> Post
               </div>
               <div
                 onClick={() => setAddPostModal(true)}
-                className="flex gap-1 sm:gap-2 p-2 cursor-pointer justify-center rounded-lg w-full xs:w-[33%] hover:bg-gray-100 text-xs sm:text-base"
+                className="flex gap-1 sm:gap-2 p-1 cursor-pointer justify-center rounded-lg w-full xs:w-[33%] hover:bg-gray-100 text-xs sm:text-base"
               >
-                <InsertPhotoIcon sx={{ color: 'blue', fontSize: 20 }} /> Photo
+                <InsertPhotoIcon sx={{ color: 'blue', fontSize: 16 }} /> Photo
               </div>
               <div
                 onClick={() => setAddPostModal(true)}
-                className="flex gap-1 sm:gap-2 p-2 cursor-pointer justify-center rounded-lg w-full xs:w-[33%] hover:bg-gray-100 text-xs sm:text-base"
+                className="flex gap-1 sm:gap-2 p-1 cursor-pointer justify-center rounded-lg w-full xs:w-[33%] hover:bg-gray-100 text-xs sm:text-base"
               >
-                <ArticleIcon sx={{ color: 'orange', fontSize: 20 }} /> Article
+                <ArticleIcon sx={{ color: 'orange', fontSize: 16 }} /> Article
               </div>
             </div>
           </Card>
@@ -146,7 +146,7 @@ const Feeds = () => {
 
         <div className="border-b-1 border-gray-400 w-[100%] my-5" />
 
-        <div className="w-full flex flex-col gap-5">
+  <div className="w-full flex flex-col gap-2 sm:gap-5">
           {post.map((item, index) => {
             return <Post item={item} key={index} personalData={personalData} />;
           })}
