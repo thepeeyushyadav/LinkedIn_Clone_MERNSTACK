@@ -79,7 +79,7 @@ const Navbar2 = () => {
   return (
     <>
       {/* Desktop Navbar */}
-      <div className="bg-white h-14 flex justify-center py-1 px-5 xl:px-56 fixed top-0 w-full z-50 border-b border-gray-200 hidden sm:flex">
+  <div className="bg-white h-14 justify-center py-1 px-5 xl:px-56 fixed top-0 w-full z-50 border-b border-gray-200 hidden md:flex">
         <div className="flex items-center justify-between w-full max-w-screen-xl">
         {/* Left Section: Logo & Search */}
         <Link to={"/feeds"} className="flex items-center gap-2">
@@ -275,7 +275,7 @@ const Navbar2 = () => {
       </div>
 
       {/* Mobile Bottom Navbar */}
-      <nav className="sm:hidden fixed bottom-0 left-0 w-full bg-white border-t border-gray-200 z-50 flex justify-between px-1 py-1 shadow-lg">
+  <nav className="md:hidden fixed bottom-0 left-0 w-full bg-white border-t border-gray-200 z-50 flex justify-between px-1 py-1 shadow-lg">
         <Link to="/feeds" className={`flex flex-col items-center flex-1 py-1 transition-all ${isActive('/feeds') ? 'text-blue-600' : 'text-gray-500'} active:bg-gray-100`}> 
           <HomeIcon className="text-2xl" />
           <span className="text-xs">Home</span>
